@@ -1,8 +1,12 @@
 import 'package:bookly_app/Features/Splash/presentation/views/widget/sliding_text.dart';
+import 'package:bookly_app/Features/home/presentation/views/home_views.dart';
+import 'package:bookly_app/constatnts.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -19,6 +23,19 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    initSlidingAnimation();
+
+    navigateToHome();
+  }
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTranstionDuration);
+    });
+  }
+
+  void initSlidingAnimation() {
     animationController = AnimationController(
         vsync: this, duration: const Duration(milliseconds: 1000));
     slidingAnimation =
@@ -29,6 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       setState(() {});
     });
   }
+
   @override
   void dispose() {
     super.dispose();
@@ -50,5 +68,3 @@ class _SplashViewBodyState extends State<SplashViewBody>
     );
   }
 }
-
-
