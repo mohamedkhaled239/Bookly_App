@@ -12,16 +12,15 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding:  EdgeInsets.symmetric(horizontal:  14.0),
-      child:  Column(
+      padding: EdgeInsets.symmetric(horizontal: 14.0),
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          
           CustomAppBar(),
           FeaturedBooksListView(),
           Text(
             'Best Saller',
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
           BestSallerListViewItem(),
         ],
@@ -35,38 +34,48 @@ class BestSallerListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 120,
       child: Row(
         children: [
-AspectRatio(
-      aspectRatio: 2.5 / 4,
-      child: Container(
-       
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          image: const DecorationImage(
-              fit: BoxFit.fill, image: AssetImage(AssetData.testimage)),
-        ),
-      ),
-    ),      
+          AspectRatio(
+            aspectRatio: 2.9 / 4,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: const DecorationImage(
+                    fit: BoxFit.fill, image: AssetImage(AssetData.testimage)),
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 20,
+          ),
           Column(
             children: [
-              Text("Harry Potter and the \n Goblet of Fire",style: Styles.titleSmall,),
-              Text("J.K.Rowling",style: Styles.titleSmall,),
-              Row(
+              SizedBox(
+                  width: MediaQuery.of(context).size.height * 0.32,
+                  child: const Text(
+                    "Harry Potter and the Goblet of Fire",
+                    style: Styles.textStyle20,
+                    maxLines: 2,
+                  )),
+              const Text(
+                "J.K.Rowling",
+                style: Styles.textStyle14,
+              ),
+              const Row(
                 children: [
-                              Text("19.99   ",style: Styles.titleSmall,),
-                              Text("4.8 (2390)")
-      
+                  Text(
+                    "19.99   ",
+                    style: Styles.textStyle14,
+                  ),
+                  Text("4.8 (2390)")
                 ],
-              )            
-      
+              )
             ],
           ),
-      
         ],
-      
       ),
     );
   }
