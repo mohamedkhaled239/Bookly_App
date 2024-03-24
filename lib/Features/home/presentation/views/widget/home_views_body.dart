@@ -1,6 +1,8 @@
 import 'package:bookly_app/Features/home/presentation/views/widget/custom_app_bar.dart';
-import 'package:bookly_app/core/utils/assets.dart';
+import 'package:bookly_app/Features/home/presentation/views/widget/featured_list_view_item.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -10,31 +12,27 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
-        CustonListViewItem(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal:  8.0),
+          child: FeaturedBooksListView(),
+        ),
       ],
     );
   }
 }
 
-class CustonListViewItem extends StatelessWidget {
-  const CustonListViewItem({super.key});
+class FeaturedBooksListView extends StatelessWidget {
+  const FeaturedBooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height*.3,
-      child: AspectRatio(
-        aspectRatio: 2.6 / 4,
-        child: Container(
-          height: 50,
-          width: 100,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            image: const DecorationImage(
-                fit: BoxFit.fill, image: AssetImage(AssetData.testimage)),
-          ),
-        ),
-      ),
+      height: MediaQuery.of(context).size.height * .25,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (conrext, item) {
+            return const FeaturedListViewItem();
+          }),
     );
   }
 }
