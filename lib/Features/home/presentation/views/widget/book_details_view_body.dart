@@ -1,4 +1,5 @@
 import 'package:bookly_app/Features/home/presentation/views/widget/custom_book_item.dart';
+import 'package:bookly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
 class BookdetailsViewBody extends StatelessWidget {
@@ -7,14 +8,23 @@ class BookdetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return  Column(
-      
+    var height = MediaQuery.of(context).size.height;
+    return Column(
       children: [
-const CustomBookDetailsAppBar(),
-Padding(
-  padding: EdgeInsets.symmetric(horizontal:  width*0.25),
-  child: CustomBookImage(),
-),
+        const CustomBookDetailsAppBar(),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: width * 0.25),
+          child: const CustomBookImage(),
+        ),
+        const SizedBox(
+          height: 43,
+        ),
+        Text('The Jungle book',
+            style: Styles.textStyle30.copyWith(fontWeight: FontWeight.w700)),
+        const SizedBox(
+          height: 6,
+        ),
+        const Text('Rudyard Kipling', style: Styles.textStyle18),
       ],
     );
   }
@@ -25,15 +35,19 @@ class CustomBookDetailsAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Padding(
-      padding: const EdgeInsets.symmetric(
-       horizontal:  20.0),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: [
-                  IconButton(onPressed: (){}, icon: const Icon(Icons.close),),
-                  const Spacer(),
-      
-          IconButton(onPressed: (){}, icon: const Icon(Icons.shopping_cart_outlined),)
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.close),
+          ),
+          const Spacer(),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.shopping_cart_outlined),
+          )
         ],
       ),
     );
