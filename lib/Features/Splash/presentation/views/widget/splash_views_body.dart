@@ -2,8 +2,6 @@ import 'package:bookly_app/Features/Splash/presentation/views/widget/sliding_tex
 import 'package:bookly_app/Features/home/presentation/views/home_views.dart';
 import 'package:bookly_app/constatnts.dart';
 import 'package:bookly_app/core/utils/assets.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
