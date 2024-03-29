@@ -10,15 +10,15 @@ static const kBookDetailsVeiw = '/bookDetailsView';
 static final router = GoRouter(routes: [
   GoRoute(
     path: '/',
-    builder: (context, state) => SplashView(),
+    builder: (context, state) => const SplashView(),
   ),
    GoRoute(
     path: kHomeVeiw,
-    builder: (context, state) => HomeView(),
+    builder: (context, state) => const HomeView(),
   ),
   GoRoute(
     path: kBookDetailsVeiw,
-    builder: (context, state) => BookdetailsView(),
+    builder: (context, state) => const BookdetailsView(),
   ),
 ]);
 }
