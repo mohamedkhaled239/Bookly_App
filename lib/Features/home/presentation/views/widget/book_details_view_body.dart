@@ -47,4 +47,3 @@ class CustomBookDetailsAppBar extends StatelessWidget {
     );
   }
 }
-

@@ -12,8 +12,7 @@ class CustomBookImage extends StatelessWidget {
         height: 50,
         width: 100,
         decoration: BoxDecoration(
-                  color: Colors.red,
-
+          color: Colors.red,
           borderRadius: BorderRadius.circular(16),
           image: const DecorationImage(
               fit: BoxFit.fill, image: AssetImage(AssetData.testimage)),

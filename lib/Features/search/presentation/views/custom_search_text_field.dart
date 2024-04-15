@@ -19,13 +19,13 @@ class CustomSearchTextField extends StatelessWidget {
             ),
           ),
         ),
-        enabledBorder: BuildOutlineInputBorder(),
-        focusedBorder: BuildOutlineInputBorder(),
+        enabledBorder: buildOutlineInputBorder(),
+        focusedBorder: buildOutlineInputBorder(),
       ),
     );
   }
 
-  OutlineInputBorder BuildOutlineInputBorder() {
+  OutlineInputBorder buildOutlineInputBorder() {
     return OutlineInputBorder(
       borderSide: const BorderSide(color: Colors.white),
       borderRadius: BorderRadius.circular(
