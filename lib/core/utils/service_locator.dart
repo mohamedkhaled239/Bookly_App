@@ -7,23 +7,12 @@ import 'package:bookly_app/core/utils/api_service.dart';
 
 final getIt = GetIt.instance;
 
-void setup() {
+void setupServiceLocator() {
   getIt.registerSingleton<ApiService>(ApiService(Dio()));
   getIt.registerSingleton<HomeRepoImpl>(
     HomeRepoImpl(
       getIt.get<ApiService>(),
     ),
   );
-  getIt.registerSingleton<HomeRepoImpl>(
-    HomeRepoImpl(
-      getIt.get<ApiService>(),
-    ),
-  );
-}
-
-class AuthRepo {
-  final ApiService apiService;
-  AuthRepo(
-    this.apiService,
-  );
+ 
 }
